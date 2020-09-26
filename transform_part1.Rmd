@@ -1,4 +1,10 @@
-# Data transformation {#transform}
+---
+title: "R for Data Science"
+author: "Garrett Grolemund, Hadley Wickham"
+output: html_document
+---
+
+# Data transformation 
 
 ## Introduction
 
@@ -9,6 +15,7 @@ Visualisation is an important tool for insight generation, but it is rare that y
 In this chapter we're going to focus on how to use the dplyr package, another core member of the tidyverse. We'll illustrate the key ideas using data from the nycflights13 package, and use ggplot2 to help us understand the data. 
 
 ```{r setup, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 library(nycflights13)
 library(tidyverse)
 ```
@@ -23,7 +30,7 @@ To explore the basic data manipulation verbs of dplyr, we'll use `nycflights13::
 flights
 ```
 
-You might notice that this data frame prints a little differently from other data frames you might have used in the past: it only shows the first few rows and all the columns that fit on one screen. (To see the whole dataset, you can run `View(flights)` which will open the dataset in the RStudio viewer). It prints differently because it's a __tibble__. Tibbles are data frames, but slightly tweaked to work better in the tidyverse. For now, you don't need to worry about the differences; we'll come back to tibbles in more detail in [wrangle](#wrangle-intro).
+You might notice that this data frame prints a little differently from other data frames you might have used in the past: it only shows the first few rows and all the columns that fit on one screen. (To see the whole dataset, you can run `View(flights)` which will open the dataset in the RStudio viewer). It prints differently because it's a __tibble__. Tibbles are data frames, but slightly tweaked to work better in the tidyverse. For now, you don't need to worry about the differences; we'll come back to tibbles in more detail in Part II: Wrangle.
  
 You might also have noticed the row of three (or four) letter abbreviations under the column names. These describe the type of each variable:
 
@@ -271,7 +278,7 @@ There are a number of helper functions you can use within `select()`:
 
 * `matches("(.)\\1")`: selects variables that match a regular expression.
    This one matches any variables that contain repeated characters. You'll 
-   learn more about regular expressions in [strings].
+   learn more about regular expressions in the strings section.
    
 *  `num_range("x", 1:3)`: matches `x1`, `x2` and `x3`.
    
