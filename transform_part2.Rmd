@@ -1,3 +1,18 @@
+---
+title: 'Chapter 5: Data transformation Part 2'
+author: "Garrett Grolemund and Hadley Wickham"
+date: "10/5/2020"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(nycflights13)
+library(tidyverse)
+```
 
 ## Add new variables with `mutate()`
 
